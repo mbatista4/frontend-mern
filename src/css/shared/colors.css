@@ -1,0 +1,7 @@
+:root {
+    --primary-color: #f0ece3;
+    --secondary-color: #dfd3c3;
+    --third-color: #c7b198;
+    --accent-color: #596e79;
+    --color-gradient: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+}

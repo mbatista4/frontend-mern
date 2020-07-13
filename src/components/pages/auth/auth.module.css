@@ -1,0 +1,104 @@
+@import "../../../css/shared/colors.css";
+
+* {
+    color: var(--accent-color);
+}
+
+.page {
+    height: 90vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageTitle {
+    align-self: center;
+    pointer-events: none;
+}
+
+.Form {
+    background: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 50%;
+    margin-top: 10px;
+    background: radial-gradient(rgba(0, 0, 0, .12), rgba(0, 0, 0, 0));
+}
+
+.inputField {
+    width: 50%;
+    position: relative;
+    height: 50px;
+}
+
+.inputField input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding-top: 20px;
+    padding-left: 5px;
+    outline: none;
+    background: none;
+}
+
+.inputField input:focus {
+    opacity: .7;
+}
+
+.inputField label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+
+.contentName {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    transition: all 0.3s ease;
+}
+
+.inputField input:focus+.labelName .contentName,
+.inputField input:valid+.labelName .contentName {
+    transform: translateY(-120%);
+    font-size: 14px;
+}
+
+
+.btn {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    outline: none;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+    padding: 9px;
+    font-size: 18px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1700px) {
+    .Form {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .Form {
+        width: 100%;
+    }
+}

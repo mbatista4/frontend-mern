@@ -1,0 +1,45 @@
+@import "../../css/shared/colors.css";
+
+.Header {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: var(--color-gradient);
+}
+
+.title_container,
+.Header_buttons {
+    display: flex;
+}
+
+.title_container {
+    margin-left: 2.5%;
+    text-decoration: none;
+}
+
+
+.Header_buttons {
+    margin-right: 2.5%;
+    margin-top: 10px;
+}
+
+.Header_buttons>button {
+    padding: 10px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+
+.Header_buttons>button:hover,
+.title_container:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+.title_container,
+.Header_buttons>button {
+    color: var(--accent-color);
+}
