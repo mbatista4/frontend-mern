@@ -18,7 +18,7 @@ export default function Login() {
         e.preventDefault();
         const loginUser = { email, password };
         try {
-            const loginRes = await axios.post("http://localhost:5000/users/login", loginUser);
+            const loginRes = await axios.post("https://mern-backend-node.herokuapp.com/users/login", loginUser);
             const { token, user } = loginRes.data;
 
             setUserData({

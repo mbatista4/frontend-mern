@@ -19,9 +19,9 @@ export default function Register() {
         e.preventDefault();
         const newUser = { email, password, passwordCheck, displayName };
         try {
-            await axios.post("http://localhost:5000/users/register", newUser);
+            await axios.post("https://mern-backend-node.herokuapp.com/users/register", newUser);
 
-            const loginRes = await axios.post("http://localhost:5000/users/login", { email, password });
+            const loginRes = await axios.post("https://mern-backend-node.herokuapp.com/users/login", { email, password });
             const { token, user } = loginRes.data;
 
             setUserData({
