@@ -1,4 +1,4 @@
-@import "../../../css/shared/colors.css";
+@import "./shared/colors.css";
 
 * {
     color: var(--accent-color);
@@ -65,6 +65,7 @@
     bottom: 5px;
     left: 5px;
     transition: all 0.3s ease;
+
 }
 
 .inputField input:focus+.labelName .contentName,
@@ -90,9 +91,53 @@
     cursor: pointer;
 }
 
+.errorMsg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(252, 125, 125, 0.212);
+    border-radius: 10px;
+    padding: 10px;
+    animation: showError 0.5s ease;
+}
+
+.errorMsg span {
+    text-align: center;
+    font-size: 16px;
+}
+
+.errorMsg button {
+    padding: 10px;
+    padding-top: 0px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    outline: none;
+    transition: all .5s ease;
+}
+
+.errorMsg button:hover {
+    font-size: 20px;
+}
+
+@keyframes showError {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 @media screen and (max-width: 1700px) {
     .Form {
         width: 50%;
+    }
+
+    .errorMsg span {
+        font-size: 14px;
     }
 }
 
@@ -101,4 +146,10 @@
     .Form {
         width: 100%;
     }
+
+    .errorMsg span {
+        font-size: 12px;
+    }
+
+
 }

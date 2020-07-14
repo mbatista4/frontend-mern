@@ -1,19 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 
 export default function Home() {
 
     const { userData } = useContext(UserContext);
-
     const history = useHistory();
+
+    useEffect(() => {
+        if (!userData.user)
+            history.push('/login');
+    });
 
     return (
         <div>
-            {
-                userData.user ? (<h2>Home Page</h2>) :
-                    history.push('/login')
-            }
+            <h2>Home Page</h2>
         </div>
     )
 }

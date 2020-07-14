@@ -2,13 +2,15 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import userContext from '../../../context/UserContext';
-import { page, Form, inputField, contentName, labelName, btn, pageTitle } from './auth.module.css'
+import { page, Form, inputField, contentName, labelName, btn, pageTitle } from '../../../css/auth.module.css'
+import ErrorNotice from '../../misc/ErrorNotice';
 
 export default function Register() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [passwordCheck, setPasswordCheck] = useState();
     const [displayName, setDisplayName] = useState();
+    const [error, setError] = useState();
 
     const { setUserData } = useContext(userContext);
     const history = useHistory();
@@ -28,11 +30,11 @@ export default function Register() {
             });
             localStorage.setItem('auth-token', token);
             history.push('/');
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+
+            err.response.data.msg && setError(err.response.data.msg);
+
         }
-
-
     }
 
     return (
@@ -59,6 +61,7 @@ export default function Register() {
                     <input className={btn} type="submit" value="Register" />
                 </div>
             </form>
+            {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />}
         </main>
     )
 }
